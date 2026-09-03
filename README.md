@@ -48,7 +48,7 @@ await document.modelContext.registerTool({
 
 ## Try it
 
-1. **Open the live URL** (see the deployed link) in **Google Chrome with WebMCP
+1. **Open the live URL** — https://husammaghaireh47-debug.github.io/co-desk/ — in **Google Chrome with WebMCP
    enabled** (`chrome://flags/#enable-webmcp-testing`), or in the **ChatGPT
    desktop / in-app browser**.
 2. When the app loads, the header badge should read **"WebMCP connected — agent

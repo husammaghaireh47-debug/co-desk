@@ -1,5 +1,5 @@
 {
-  "meta": { "appName": "Co-Desk", "url": "<your-live-url>" },
+  "meta": { "appName": "Co-Desk", "url": "https://husammaghaireh47-debug.github.io/co-desk/" },
   "description": "Human + agent support operations over a shared WebMCP tool layer.",
   "tools": [
     { "name": "listOpenTickets", "mode": "imperative" },
