@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Co-Desk — Human + Agent Support Operations</title>
+  <meta name="description" content="A WebMCP-native support desk where a human and an AI agent triage a live queue together." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">◧◧</span>
+      <h1>Co-Desk</h1>
+      <span class="tag">human + agent support ops</span>
+    </div>
+    <div class="status" id="mcpStatus">
+      <span class="dot"></span><span id="mcpStatusText">checking WebMCP…</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="compose card">
+      <h2>New request</h2>
+      <div class="form">
+        <input id="f-subject" placeholder="Subject" autocomplete="off" />
+        <input id="f-requester" placeholder="Requester email" autocomplete="off" />
+        <select id="f-category">
+          <option>billing</option><option>product</option><option>technical</option>
+          <option>account</option><option>general</option>
+        </select>
+        <select id="f-priority">
+          <option value="low">low</option><option value="medium" selected>medium</option>
+          <option value="high">high</option><option value="urgent">urgent</option>
+        </select>
+        <textarea id="f-description" rows="2" placeholder="What happened?"></textarea>
+        <button id="btn-create">Create (as human)</button>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <div class="metric"><b id="m-open">0</b><span>open</span></div>
+      <div class="metric"><b id="m-progress">0</b><span>in progress</span></div>
+      <div class="metric"><b id="m-high">0</b><span>high / urgent</span></div>
+      <div class="metric"><b id="m-resolved">0</b><span>resolved</span></div>
+      <div class="metric"><b id="m-byagent">0</b><span>moved by agent</span></div>
+    </section>
+
+    <section class="queue-wrap">
+      <div class="card queue">
+        <h2>Live queue</h2>
+        <div id="filters" class="filters">
+          <button data-f="all" class="active">All</button>
+          <button data-f="open">Open</button>
+          <button data-f="in_progress">In progress</button>
+          <button data-f="resolved">Resolved</button>
+        </div>
+        <ul id="tickets"></ul>
+        <p id="empty" class="empty">No tickets match. Create one or ask your agent to help.</p>
+      </div>
+      <aside class="card activity">
+        <h2>Live activity</h2>
+        <ul id="activity"></ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer>Co-Desk · WebMCP Challenge 2026 · <a href="#" id="reset">reset demo data</a></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
